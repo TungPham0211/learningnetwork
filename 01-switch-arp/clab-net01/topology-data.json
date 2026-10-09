@@ -1,0 +1,148 @@
+{
+  "name": "net01",
+  "type": "clab",
+  "clab": {
+    "config": {
+      "prefix": "clab",
+      "mgmt": {
+        "network": "clab",
+        "bridge": "br-363c5c0b1008",
+        "ipv4-subnet": "172.20.20.0/24",
+        "ipv4-gw": "172.20.20.1",
+        "ipv6-subnet": "3fff:172:20:20::/64",
+        "ipv6-gw": "3fff:172:20:20::1",
+        "external-access": true
+      }
+    }
+  },
+  "ssh-pub-keys": [],
+  "nodes": {
+    "h1": {
+      "index": "0",
+      "shortname": "h1",
+      "longname": "clab-net01-h1",
+      "fqdn": "h1.net01.io",
+      "group": "",
+      "labdir": "/home/sontung/network-labs/01-switch-arp/clab-net01/h1",
+      "kind": "linux",
+      "image": "nicolaka/netshoot:v0.14",
+      "mgmt-net": "",
+      "mgmt-intf": "",
+      "mgmt-ipv4-address": "",
+      "mgmt-ipv4-prefix-length": 0,
+      "mgmt-ipv6-address": "",
+      "mgmt-ipv6-prefix-length": 0,
+      "mac-address": "",
+      "labels": {
+        "clab-mgmt-net-bridge": "br-363c5c0b1008",
+        "clab-node-group": "",
+        "clab-node-kind": "linux",
+        "clab-node-lab-dir": "/home/sontung/network-labs/01-switch-arp/clab-net01/h1",
+        "clab-node-longname": "clab-net01-h1",
+        "clab-node-name": "h1",
+        "clab-node-type": "",
+        "clab-owner": "sontung",
+        "clab-topo-file": "/home/sontung/network-labs/01-switch-arp/lab.clab.yml",
+        "containerlab": "net01"
+      },
+      "port-bindings": [
+      ]
+    },
+    "h2": {
+      "index": "1",
+      "shortname": "h2",
+      "longname": "clab-net01-h2",
+      "fqdn": "h2.net01.io",
+      "group": "",
+      "labdir": "/home/sontung/network-labs/01-switch-arp/clab-net01/h2",
+      "kind": "linux",
+      "image": "nicolaka/netshoot:v0.14",
+      "mgmt-net": "",
+      "mgmt-intf": "",
+      "mgmt-ipv4-address": "",
+      "mgmt-ipv4-prefix-length": 0,
+      "mgmt-ipv6-address": "",
+      "mgmt-ipv6-prefix-length": 0,
+      "mac-address": "",
+      "labels": {
+        "clab-mgmt-net-bridge": "br-363c5c0b1008",
+        "clab-node-group": "",
+        "clab-node-kind": "linux",
+        "clab-node-lab-dir": "/home/sontung/network-labs/01-switch-arp/clab-net01/h2",
+        "clab-node-longname": "clab-net01-h2",
+        "clab-node-name": "h2",
+        "clab-node-type": "",
+        "clab-owner": "sontung",
+        "clab-topo-file": "/home/sontung/network-labs/01-switch-arp/lab.clab.yml",
+        "containerlab": "net01"
+      },
+      "port-bindings": [
+      ]
+    },
+    "sw1": {
+      "index": "2",
+      "shortname": "sw1",
+      "longname": "clab-net01-sw1",
+      "fqdn": "sw1.net01.io",
+      "group": "",
+      "labdir": "/home/sontung/network-labs/01-switch-arp/clab-net01/sw1",
+      "kind": "linux",
+      "image": "nicolaka/netshoot:v0.14",
+      "mgmt-net": "",
+      "mgmt-intf": "",
+      "mgmt-ipv4-address": "",
+      "mgmt-ipv4-prefix-length": 0,
+      "mgmt-ipv6-address": "",
+      "mgmt-ipv6-prefix-length": 0,
+      "mac-address": "",
+      "labels": {
+        "clab-mgmt-net-bridge": "br-363c5c0b1008",
+        "clab-node-group": "",
+        "clab-node-kind": "linux",
+        "clab-node-lab-dir": "/home/sontung/network-labs/01-switch-arp/clab-net01/sw1",
+        "clab-node-longname": "clab-net01-sw1",
+        "clab-node-name": "sw1",
+        "clab-node-type": "",
+        "clab-owner": "sontung",
+        "clab-topo-file": "/home/sontung/network-labs/01-switch-arp/lab.clab.yml",
+        "containerlab": "net01"
+      },
+      "port-bindings": [
+      ]
+    }
+  },
+  "links": [
+    {
+      "endpoints": {
+        "a": {
+          "node": "h1",
+          "interface": "eth1",
+          "mac": "aa:c1:ab:e0:0b:ed",
+          "peer": "z"
+        },
+        "z": {
+          "node": "sw1",
+          "interface": "eth1",
+          "mac": "aa:c1:ab:63:41:75",
+          "peer": "a"
+        }
+      }
+    },
+    {
+      "endpoints": {
+        "a": {
+          "node": "h2",
+          "interface": "eth1",
+          "mac": "aa:c1:ab:6a:1c:54",
+          "peer": "z"
+        },
+        "z": {
+          "node": "sw1",
+          "interface": "eth2",
+          "mac": "aa:c1:ab:9f:f0:de",
+          "peer": "a"
+        }
+      }
+    }
+  ]
+}
